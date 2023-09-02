@@ -14,9 +14,7 @@
 					/>
 				</svg>
 			</button>
-			<ClientOnly>
-				<h1>{{ title }}</h1>
-			</ClientOnly>
+			<h1>{{ title }}</h1>
 			<button @click="close">X</button>
 		</div>
 		<div id="homeContainer">
