@@ -14,7 +14,9 @@
 					/>
 				</svg>
 			</button>
-			<h1>{{ title }}</h1>
+			<ClientOnly>
+				<h1>{{ title }}</h1>
+			</ClientOnly>
 			<button @click="close">X</button>
 		</div>
 		<div id="homeContainer">
@@ -111,16 +113,6 @@ export default {
 					)
 					.join("")
 			);
-		},
-		decode(str) {
-			if (!str) return str;
-			const decodedStr = decodeURIComponent(str);
-			return decodedStr
-				.split("")
-				.map((char, ind) =>
-					ind % 2 ? String.fromCharCode(char.charCodeAt() ^ 2) : char
-				)
-				.join("");
 		},
 		loadLink(link) {
 			if (process.browser) {
